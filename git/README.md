@@ -23,3 +23,7 @@ gitk --all $( git fsck --no-reflog | awk '/dangling commit/ {print $3}' )
 
 ### gitk - REPOSITORY BROWSER -  every single commit in the repository ever, regardless of whether it is reachable or not - POWERSHELL WINDOWS
 gitk --all $(git fsck --no-reflog | Select-String "(dangling commit )(.*)" | %{ $_.Line.Split(' ')[2] })
+
+
+### Submodules-Pull
+git submodule update --init --recursive

@@ -70,6 +70,18 @@ kubectl set image \<object_type\>/\<object_name\> \<container_name\>=\<new_image
 
 ## version
 kubectl version
+
+## apiserver
+kubectl proxy --address='0.0.0.0' --port=8002 --accept-hosts='.*'
+curl localhost:8002
+
+### apis
+curl localhost:8002/apis
+
+## CRD
+kubectl get crd
+kubectl create -f democrd1-invalid.yaml --validate=false
+kubectl get democrd democrd-1 -oyaml
  
 
 # minikube
