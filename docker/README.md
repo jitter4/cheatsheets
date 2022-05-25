@@ -111,3 +111,7 @@ docker-compose up
 docker-compose up -d
 ## down
 docker-compose down
+
+
+docker stop $(docker ps -a -q)
+docker system prune -a
